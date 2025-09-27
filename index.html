@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZiggyStarProgrammer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(to bottom, #0a0f1c, #020617);
+      color: #f1f5f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Star field */
+    .star {
+      position: fixed;
+      width: 3px;
+      height: 3px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: twinkle 3s infinite;
+      z-index: 0; /* behind the card */
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 0.8; }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 1.5rem;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      z-index: 1; /* above stars */
+      position: relative;
+    }
+
+    img.avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 3px solid #38bdf8;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin: 0.5rem 0;
+    }
+
+    p {
+      font-size: 1rem;
+      margin: 0.5rem 0 1.5rem;
+      color: #cbd5e1;
+    }
+
+    .links a {
+      display: block;
+      margin: 0.5rem 0;
+      padding: 0.8rem;
+      background: #38bdf8;
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 0.75rem;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .links a:hover {
+      background: #0ea5e9;
+      color: #fff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <!-- Business Card -->
+  <div class="card">
+    <img src="https://avatars.githubusercontent.com/u/70512643?v=4" alt="Avatar" class="avatar" />
+    <h1>ZiggyStarProgrammer</h1>
+    <p>Developer 🖥 · Tester 🛠 · Explorer 🧭</p>
+    <div class="links">
+      <a href="https://github.com/ZiggyStarProgrammer" target="_blank">GitHub</a>
+      <p>Discord: ilikeapplejuice123</p>
+    </div>
+  </div>
+
+  <!-- Script to generate stars -->
+  <script>
+    const numStars = 80; // adjust for density
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = (2 + Math.random() * 3) + "s";
+      star.style.animationDelay = (Math.random() * 5) + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+</body>
+</html>
