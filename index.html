@@ -84,6 +84,69 @@
       color: #fff;
       transform: scale(1.05);
     }
+    .button-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .accordion-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0.5rem 0;
+      width: 100%;
+    }
+
+    .accordion-button {
+      padding: 0.8rem 1.2rem;
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      border-radius: 0.75rem;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.5s ease;
+      width: 100%;
+      text-align: center;
+    }
+
+    .accordion-button:hover {
+      background: #0ea5e9;
+    }
+
+    .accordion-content {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.3s ease;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+
+    .accordion-content ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .accordion-content li {
+      margin: 0.3rem 0;
+    }
+
+    /* Show content on hover of container */
+    .accordion-container:hover .accordion-content {
+      max-height: 500px; /* large enough to show the list */
+    }
+
+    .arrow {
+      display: inline-block;
+      transition: transform 0.5s ease;
+    }
+
+    /* Rotate arrow when expanded */
+    .accordion-container:hover .arrow {
+      transform: rotate(180deg);
+    }
+
   </style>
 </head>
 <body>
@@ -91,10 +154,43 @@
   <div class="card">
     <img src="https://avatars.githubusercontent.com/u/70512643?v=4" alt="Avatar" class="avatar" />
     <h1>ZiggyStarProgrammer</h1>
-    <p>Developer 🖥 · Tester 🛠 · Explorer 🧭</p>
+    <p>Developer 🖥 · Tester 🛠</p>
+    <p>Automotive Sowftware Engineer / Test Engineer</p>
+    <div class="accordion-container">
+      <button class="accordion-button">
+        About me
+        <span class="arrow">▼</span>
+      </button>
+      <div class="accordion-content">
+        <p>Coding</p>
+        <p>Basketball</p>
+        <p>Team player</p>
+        <p>Solution oriented</p>
+        <p>Gaming</p>
+        <p>Skiiing</p>
+      </div>
+    </div>
+    <div class="accordion-container">
+      <button class="accordion-button">
+        Skills
+        <span class="arrow">▼</span>
+      </button>
+        <div class="accordion-content">
+          <p>Python</p>
+          <p>Pytest</p>
+          <p>CI/CD</p>
+          <p>JavaScript</p>
+          <p>Linux</p>
+          <p>Bash</p>
+          <p>Test design</p>
+          <p>Git</p>
+          <p>DLT Logging</p>
+          <p>ADB</p>
+        </div>
+    </div>
     <div class="links">
       <a href="https://github.com/ZiggyStarProgrammer" target="_blank">GitHub</a>
-      <p>Discord: ilikeapplejuice123</p>
+      <a href="mailto:hugo.develop9889@gmail.com"><i class="fas fa-envelope"></i>Email Me</a>
     </div>
   </div>
 
